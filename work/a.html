@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <style type="text/css">
+        .aaa {
+            width: 450px;
+            height: 150px;
+            background-color: whitesmoke;
+            margin-bottom: 30px;
+        }
+
+        /* 两个div一样，可以让两个div的Class设为一样的 都叫aaa */
+
+        .table {
+            width: 400px;
+            height: 20px;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            background-color: white;
+        }
+
+        /* 两个表格一样，可以让两个表格的Class设为一样的 都叫table */
+
+
+        .table tr {
+
+            background-color: lightskyblue;
+        }
+
+        .table .tr1 {
+            background-color: white;
+
+        }   /*  有细微区别时，可将不同的部分单独设置成一个样式，进行覆盖即可*/
+
+        .table tr th {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+
+        .table tr:hover {
+            background-color: #8A2BE2;
+        }     /*  tr:hover ： 鼠标放上去会有浮动*/
+
+        td, th {
+            border-bottom: 1px solid white;
+            border-right: 1px solid white;
+            text-align: center;
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="aaa">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>标题一</th>
+            <th>标题二</th>
+            <th>标题三</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>数据一</td>
+            <td>数据二</td>
+            <td>数据三</td>
+        </tr>
+        <tr>
+            <td>数据四</td>
+            <td>数据五</td>
+            <td>数据六</td>
+        </tr>
+        <tr>
+            <td>数据七</td>
+            <td>数据八</td>
+            <td>数据九</td>
+        </tr>
+        <tr>
+            <td>数据十</td>
+            <td>数据十一</td>
+            <td>数据十二</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="aaa">
+    <table class="table table2">
+        <thead>
+        <tr>
+            <th>标题一</th>
+            <th>标题二</th>
+            <th>标题三</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>数据一</td>
+            <td>数据二</td>
+            <td>数据三</td>
+        </tr>
+        <tr class="tr1">   <!-- 细微差别，单独定义样式-->
+            <td>数据四</td>
+            <td>数据五</td>
+            <td>数据六</td>
+        </tr>
+        <tr>
+            <td>数据七</td>
+            <td>数据八</td>
+            <td>数据九</td>
+        </tr>
+        <tr class="tr1">
+            <td>数据十</td>
+            <td>数据十一</td>
+            <td>数据十二</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
