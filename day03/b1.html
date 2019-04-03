@@ -2,9 +2,269 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>主界面</title>
+    <style>
+        * {
+            margin: 0; /*元素的外边界，边框之外的一段空白*/
+            padding: 0; /*元素的补白，内容到边框的一段空白*/
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(233, 233, 233);
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .header {
+            width: 100%;
+            height: 30px;
+            background-color: #F5F6F7;
+
+            position: relative; /* 相对定位 */
+        }
+
+        .header h3 {
+            height: 30px;  /* 根据贴入图片的大小设置大小 */
+            line-height: 30px; /* 行高 */
+
+            position: relative;  /* 相对定位 */
+
+        }
+
+        .header ul {
+            position: absolute;  /* 绝对定位 位置固定 */
+            top: 0;
+            right: 30px;
+        }
+
+        .header ul li {
+            height: 26px;
+            line-height: 26px;  /* 行高 */
+            list-style-type: none;  /*设置列表项的样式*/
+            /*display: inline-block;*/
+            float: left; /* 向左浮动 */
+            padding: 2px;
+        }
+        .home {
+            list-style-image: url(../img/icon5.png);
+        }
+
+        .first{
+            list-style-image: url(../img/icon8.png);
+        }
+
+        .search {
+            width:100%;
+            min-width: 926px; /* 根据图片大小计算最小宽度 */
+            height:40px;
+            line-height: 40px;
+            background-color:#F5F6F7;
+            margin-top:20px;
+
+
+        }
+
+        select, input {
+            width:200px;
+            height:24px;
+        }
+
+        .btn{
+            width:106px;
+            height:36px;
+
+            background-image: url("../img/btn4.png"); /* 给按钮加背景图 */
+
+            border:0;
+        }
+
+        .table{
+            width:100%;
+            text-align: center; /* 表格内容居中 */
+            margin-top:10px;
+        }
+
+        .table tr {
+            background-color: white; /* 行颜色 */
+        }
+
+        .table tr.odd{
+            background-color: #A9A9A9; /* 不同的样式进行覆盖 */
+        }
+
+        .table tr:hover {  /*  浮动 */
+            background-color:#ADFF2F;
+        }
+
+        .table td,.table th{
+            height:35px;  /* 行高 */
+        }
+
+        .table th{
+            background-color:#4169E1;
+            color:white;  /* 标头的设置 */
+        }
+
+        .footer{
+            width:100%;
+            height:40px;
+            line-height: 40px;
+
+            background-color: white;
+            margin-top:10px;
+
+            position: relative; /* 相对定位 */
+        }
+
+        .footer ul {
+            position: absolute;
+            top:0;
+            right:30px;
+        }
+
+        .footer ul li{
+            height:40px;
+            line-height: 40px;
+            list-style-type: none;
+            /*display: inline-block;*/
+            float:left;
+            padding:2px;
+        }
+        .page { /* 页面底部，翻页部分的设置 */
+            text-decoration: none; /*  text-decoration: 文本效果  */
+            color:#000000;
+
+            display: inline-block;
+            border:1px solid #A9A9A9;
+            width:30px;
+            height:30px;
+
+            text-align: center;
+            vertical-align: middle;  /* vertical-align: 垂直居中 */
+
+            background-image: url(../img/btn1.png);
+            background-position: -10px -2px; /* 上下 左右 */
+        }
+
+        .pre {
+            background-image: url(../img/icon7.png);
+            background-repeat: no-repeat;  /* background-repeat:元素的背景图片的平铺模式 */
+            background-position: 10px 8px;
+        }
+
+        .next {
+            background-image: url(../img/icon8.png);
+            background-repeat: no-repeat;
+            background-position: 10px 8px;
+        }
+
+        .box {
+            width:98%;
+            margin:0 auto;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <div class="header">
+        <div class="box">
+            <h3>系统日志</h3>
+            <ul>
+                <li class="home"><img src="../img/icon5.png"/></li>
+                <li>首页</li>
+                <li class="first"><img src="../img/icon8.png"/></li>
+                <li>日志管理</li>
+                <li class="first"><img src="../img/icon8.png"/></li>
+                <li>系统日志</li>
+            </ul>
+        </div>
+    </div>
+    <div class="search">
+        <div class="box">
+            <label>类型：</label>
+            <select>   <!-- select : 选择框 -->
+                <option>类型1</option>
+                /* 选项 */
+                <option>类型2</option>
+            </select>
+            <label>日期：</label><span>从</span>
+            <input/> <!--空白输入框  -->
+            <span>至</span>
+            <input/>
+            <input type="button" class="btn" value="搜索"/> <!-- button：按钮 -->
+        </div>
+    </div>
+    <div class="box">
+        <table class="table">
+            <thead>  <!-- 标头 -->
+            <tr>
+                <th>日志操作</th>  <!-- 表格标题，一般放在第一行 -->
+                <th>事件类型</th>
+                <th>发生时间</th>
+                <th>修复时间</th>
+                <th>处理人</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>新增用户操作</td>
+                <td>新增用户操作</td>
+                <td>2019-03-03</td>
+                <td>2019-04-03</td>
+                <td>张三</td>
+            </tr>
+            <tr class="odd">  <!-- 区别设置 -->
+                <td>新增用户操作</td>
+                <td>新增用户操作</td>
+                <td>2019-03-03</td>
+                <td>2019-04-03</td>
+                <td>张三</td>
+            </tr>
+            <tr>
+                <td>新增用户操作</td>
+                <td>新增用户操作</td>
+                <td>2019-03-03</td>
+                <td>2019-04-03</td>
+                <td>张三</td>
+            </tr>
+            <tr class="odd">
+                <td>新增用户操作</td>
+                <td>新增用户操作</td>
+                <td>2019-03-03</td>
+                <td>2019-04-03</td>
+                <td>张三</td>
+            </tr>
+            <tr>
+                <td>新增用户操作</td>
+                <td>新增用户操作</td>
+                <td>2019-03-03</td>
+                <td>2019-04-03</td>
+                <td>张三</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <div class="footer">
+        <div class="box">
+            <button class="btn">保存</button>  <!-- 按钮 -->
+            <ul>
+                <li><a href="#" class="page pre"></a></li>  <!-- 无序表格实现翻页 -->
+                <li><a href="#" class="page ">1</a></li>
+                <li><a href="#" class="page ">2</a></li>
+                <li><a href="#" class="page ">3</a></li>
+                <li><a href="#" class="page next"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
