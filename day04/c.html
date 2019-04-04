@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+    <script type="text/javascript">
+        var a = 1;
+        var b = true;
+        alert(a + b); // 2
+        // number + boolean (true =1,false =0) = number
+
+        var a = "1";
+        var b = true;
+        alert(a + b); // 1true
+        // string + boolean : 字符串拼接
+
+        a = 5;
+        var s = "2";
+        alert(a + s);  // 52
+        alert(a - s);  // 3
+        // 字符串的 + ：拼接
+        // 字符串的 - ：类型转换为number
+        // 数据类型无法转换时，变成NAN（不是数值）。
+        /** 任何一个数值与NAN运算均为NAN ， NAN不与任何一个数相等，且不等于本身*/
+
+        var k = ' '; // 空格
+        var m = 2, n = 3;
+        alert(k + m + n); //23
+        alert(m + n + k); // 5
+        alert(k - m - n); // -5
+
+        var bb = true;
+        if (bb) {
+            alert(123);
+        }
+
+        var bb = true;
+        if (k) {  // K ; 空字符串 --> false
+            // 所有的非空、非0、非undefined、非null的数值都可以转换为boolean的true ，否则就是false
+            alert(123);
+        }else {
+            alert(456);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

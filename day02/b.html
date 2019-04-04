@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02-样式表加载顺序</title>
+		<style type="text/css">
+			#aId {
+				color:gold;
+			}
+			
+			a{
+				color:blue;
+			}
+			
+			*{
+				color:red;
+			}
+			
+			.aColor {
+				color:greenyellow;
+				
+			}
+			
+			#aId:hover {
+				color:aquamarine;
+			}
+			
+			#aId:active{
+				color:darkolivegreen;
+			}
+			
+			/**
+			 * 类选择符： 定义时候需要加上点 ，引用的时候（调用的时候）不能够加点
+			 * 
+			 */
+			
+			.p{
+				color:darkgray;
+			}
+			
+			
+			.p .ss{
+				color:darkorange;
+			}
+			
+			.p div{
+				color:#0000FF;
+			}
+			
+		</style>
+	</head>
+	<!--
+    	
+    -->
+	<body>
+		<a id="aId" style="color:black" class="aColor" href="#">跳转到a.html</a>
+		
+		<div class="p">
+			dddddddddddddddd
+			<div class="s">
+				eeeeeeeeeeeeeee
+				<div class="ss">dfsfdsfdsfds</div>
+			</div>
+			
+		</div>
+	</body>
 </html>
