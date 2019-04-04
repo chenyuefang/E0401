@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var a = new Array();
+			a[0] = 1;
+			a[1] = 2;
+//			alert(a.length);
+			a[10] = 'dddd';
+			a['index'] = true;
+//			alert(a.length);	// 11? 12?
+//			alert(a['index']);
+//			alert(typeof a);
+
+			a['name'] = "张三";
+//			alert(a.name);
+			//区别在哪里？
+			
+			// Array : 容器 ， 容器里面的元素访问 ： 使用下标访问； 下标： number（整数）
+			// 这个时候就不是Array的特性（添加一个非整数下标的变量） 应该是一个对象的特性
+//			alert(a[-1]);//范围：0 length-1
+			
+			
+//			var student = new Object();
+//			student.name = "张三";
+//			student.age = 22;
+//			
+//			var Student = function(name, age){
+//				this.name = name;
+//				this.age = age;
+//			}
+//			
+//			var s = new Student('李四',23); //object
+//			alert(typeof s);
+			var i = 0;  var key = 2;
+			for (; i < a.length; i++){
+				console.log(a[i])
+				if (key == a[i]){
+					console.log("顺序查找，找到了key="+key +",的位置在第"+i+"位")	
+				}
+			}
+			
+			// js 内置的函数： alert(); prompt(); 
+			
+//			prompt("dddddd?");
+//			alert(confirm("确认要删除吗？"));
+//			if(confirm("确认要删除吗？")){
+//				alert("确认删除");
+//			}
+			
+			
+//			 alert(parseInt(Math.random()*33))  判断球不能重复
+//			 alert(parseInt(Math.random()*16))
+//			 var arr = [];
+//			 for (i=0;i<6;i++){
+//			 	arr.length < 6
+//			 }
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

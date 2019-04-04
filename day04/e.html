@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr = [2,7,5,4,9,1,8];
+			//冒泡排序：核心理论  元素两两比较 前面比后面大，交换，否则不交换
+			// 思路：
+			//  1、10个元素 比较9次能够确定一个最大的或者最小的
+			//  2、10个元素 比较9趟
+			//  3、每比较一趟就少一个元素
+			
+			var len = 7;var j = 0, i = 0; // a[6]
+			
+			for (i = 0; i < len - 1; i++){
+				// 一趟
+				for(j =0 ; j < len-1-i; j++){
+					if (arr[j] > arr[j+1]){
+						var temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
