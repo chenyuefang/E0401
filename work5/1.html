@@ -4,19 +4,140 @@
     <meta charset="UTF-8">
     <title>页面</title>
     <style type="text/css">
-        button{
-            margin:20px 30px;
-            padding:10px 10px ;
+
+        .d1 {
+            width: 200px;
+            height: 300px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: lightgrey;
         }
+
+
+        /*button {*/
+
+        /*margin: 5px 20px;*/
+        /*padding: 10px 10px;*/
+        /*}*/
     </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var CheckAll = document.getElementById('All');
+            var UnCheck = document.getElementById('uncheck');
+            var OtherCheck = document.getElementById('othercheck');
+            var div = document.getElementById('div');
+            var CheckBox = div.getElementsByTagName('input');
+            CheckAll.onclick = function () {
+                for (i = 0; i < CheckBox.length; i++) {
+                    CheckBox[i].checked = true;
+                }
+
+            }
+            UnCheck.onclick = function () {
+                for (i = 0; i < CheckBox.length; i++) {
+                    CheckBox[i].checked = false;
+                }
+
+            }
+            OtherCheck.onclick = function () {
+                for (i = 0; i < CheckBox.length; i++) {
+                    if (CheckBox[i].checked == true) {
+                        CheckBox[i].checked = false;
+                    } else {
+                        CheckBox[i].checked = true;
+                    }
+                }
+
+            }
+        }
+    </script>
+
 </head>
 <body>
-<div>
+<div class="d1">
 
-    <button>全选</button>
-    <button>取消全选</button>
-    <button>反选</button>
+    <input type="checkbox" name="checkbox1" value="1"/> 选项1<br/>
+    <input type="checkbox" name="checkbox1" value="2"/> 选项2<br/>
+    <input type="checkbox" name="checkbox1" value="3"/> 选项3<br/>
+    <input type="checkbox" name="checkbox1" value="4"/> 选项4
+
+
+    <p>
+        <input type="button" id="all" class="div1">全选<br/>
+        <input type="button" id="uncheck" class="div1">取消全选<br/>
+        <input type="button" id="othercheck" class="div1">反选
+
 </div>
-
 </body>
 </html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>反选</title>-->
+    <!--<style>-->
+        <!--.div-->
+        <!--{-->
+            <!--margin:20px 20px;-->
+        <!--}-->
+        <!--.div1-->
+        <!--{-->
+            <!--margin-bottom: 5px;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<script type="text/javascript">-->
+        <!--window.onload=function ( )-->
+        <!--{-->
+            <!--var CheckAll=document.getElementById('All');-->
+            <!--var UnCheck=document.getElementById('uncheck');-->
+            <!--var OtherCheck=document.getElementById('othercheck');-->
+            <!--var div=document.getElementById('div');-->
+            <!--var CheckBox=div.getElementsByTagName('input');-->
+            <!--CheckAll.onclick=function ( )-->
+            <!--{-->
+                <!--for(i=0;i<CheckBox.length;i++)-->
+                <!--{-->
+                    <!--CheckBox[i].checked=true;-->
+                <!--};-->
+            <!--};-->
+            <!--UnCheck.onclick=function ( )-->
+            <!--{-->
+                <!--for(i=0;i<CheckBox.length;i++)-->
+                <!--{-->
+                    <!--CheckBox[i].checked=false;-->
+                <!--};-->
+            <!--};-->
+            <!--OtherCheck.onclick=function ( )-->
+            <!--{-->
+                <!--for(i=0;i<CheckBox.length;i++)-->
+                <!--{-->
+                    <!--if(CheckBox[i].checked==true)-->
+                    <!--{-->
+                        <!--CheckBox[i].checked=false;-->
+                    <!--}else-->
+                    <!--{-->
+                        <!--CheckBox[i].checked=true;-->
+                    <!--}-->
+                <!--};-->
+            <!--};-->
+        <!--};-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="div" class="div">-->
+    <!--<input   type="checkbox"   value="选项1"    name="checkbox1"   />选项1<br/>-->
+    <!--<input   type="checkbox"   value="选项2"    name="checkbox1"   />选项2<br/>-->
+    <!--<input   type="checkbox"   value="选项3"    name="checkbox1"   />选项3<br/>-->
+    <!--<input   type="checkbox"   value="选项4"    name="checkbox1"   />选项4-->
+    <!--<p><input class="div1" type="button" id="All" value="全选"/><br/>-->
+        <!--<input class="div1" type="button" id="uncheck" value="取消全选"/><br/>-->
+        <!--<input class="div1" type="button" id="othercheck" value="反选"/><br/>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
