@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>完成导航菜单功能</title>
+    <link href="../css/c.css" rel="stylesheet" />
+    <script type="text/javascript">
+function f1(obj) {
+    var ulArr = document.getElementsByClassName("innerBox");
+   var ul = obj .nextSibling;
+   while(ul && ul.nodeType !=1) {
+       console.log(ul.nodeType)
+       ul = ul.nextSibling
+   }
+//				console.log(ul.nodeType)
+    for (var p = 0; p < ulArr.length; p++){
+        console.log("p="+p+",display:"+ulArr[p].style.display);
+//					if (!ulArr[p].style.display){
+//						ulArr[p].style.display = "block";
+//					}
+//					else {
+//						ulArr[p].style.display = ""; // "" js false 隐藏的
+//					}
+        ulArr[p].style.display = "";
+    }
+    ul.style.display = "block";
+
+
+}
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="outerBox">
+        <li>
+            <a href="javascript:void(0)" onclick="f1(this)"><span>日志管理</span></a>
+            <ul class="innerBox">
+                <li>
+                    <a href="javascript:void(0)">
+                        <span><img src="../../img/icon4.png" />日志列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />新增日志</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />日志模板</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />查看历史日志</span></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" onclick="f1(this)"><span>用户管理</span></a><ul class="innerBox">
+            <li>
+                <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />用户列表</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />新增用户</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />修改用户</span></a>
+            </li>
+        </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" onclick="f1(this)"><span>客户管理</span></a><ul class="innerBox">
+            <li>
+                <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />客户列表</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><span><img src="../../img/icon4.png" />新增客户</span></a>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>js的DOM操作</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+        }
+
+        #a1{
+
+            background-color: #22EE44;
+        }
+
+        .a2{
+            background-color: #0000FF;
+        }
+
+        .a3{
+            background-color: #DCFF00;
+        }
+    </style>
+
+    <!--
+        document下的接口：
+            getElementById: 获取id为(文档中第一次出现)a1的元素对象
+    -->
+</head>
+<body>
+<div id="a1" class="a2">1</div>
+<div id="a2" class="a2" name="test"><span id="a22">2</span><span id="a23">3</span></div>
+<span id="a3" class="a2">ddddddddddddddd</span>
+</body>
+</html>
+<script type="text/javascript">
+    // 返回带有指定 ID 的元素
+    var a1 = document.getElementById("a1");
+    //	console.log(a1);
+    // 文档的加载顺序：浏览器是从上往下执行的
+    var a = document.getElementsByTagName("div");
+    //	console.log(a)
+    var b = document.getElementsByClassName("a2");
+    //	console.log(b)
+    var a2 = document.getElementById("a2");
+    var a3 = document.getElementById("a3");
+    //	a2.appendChild(a3);
+    //	a2.removeChild(a3);
+    //	console.log(a2)
+    //	var a22 = document.getElementById("a22");
+    //	a2.replaceChild(a3,a22);
+    //	console.log(a2)
+
+    a2.insertBefore(a3,document.getElementById("a23"));
+    //	console.log(a2)
+    //	console.log(a2.getAttribute("class"));
+    //	a2.setAttribute("class","a3");
+    //	console.log(a2)
+
+    var div = document.createElement("div");
+    document.createAttribute("index");
+    div.setAttribute("index",3);
+
+    var text = document.createTextNode("3243324");
+    div.appendChild(text);
+    //	console.log(div);
+    div.style.backgroundColor = "#ff0000";
+    a2.appendChild(div);
+    console.log(div.style.backgroundColor)
+</script>

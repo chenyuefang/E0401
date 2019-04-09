@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js事件初识</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #0000FF;
+        }
+    </style>
+    <script type="text/javascript">
+        // onload : 当页面加载完成后，执行该函数
+        window.onload = function () {
+            var a1 = document.getElementById("a1"); // 获取对应第一个id的元素
+            console.log(a1); // 打印a1
+        }
+       // var a1 = document.getElementById("a1");
+        //			console.log(a1);
+
+        function changeWidth(step, max){
+            var a1 = document.getElementById("a1");
+//				console.log(a1.style.width)
+            // parseInt : 截取字符串中的数字  ;以数字开头的数字串  NaN
+//				console.log(parseInt(a1.style.width)); // 字符串的比较规则  123   13
+            var w = parseInt(a1.style.width);
+            if (w + step < max){  // 增加宽度
+                w += step;
+            }
+            a1.style.width = w + 'px';
+        }
+    </script>
+</head>
+<body>
+<div id="a1" style="width:100px;"></div>
+<button onclick="changeWidth(10,500)">点击我之后，改变div的宽度</button>
+</body>
+</html>
+<script type="text/javascript">
+    console.log("页面最后执行的");
+</script>
