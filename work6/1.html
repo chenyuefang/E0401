@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            width: 1200px;
+            height: 800px;
+            border: 1px solid yellow;
+        }
+
+        .div2 {
+            height: 100px;
+            border: 1px solid yellow;
+        }
+        .div3{
+            height: 500px;
+            border:0;
+        }
+
+        ul {
+            position: absolute; /* 绝对定位 位置固定 */
+            top: 0;
+            left: 100px;
+        }
+
+        ul li {
+            height: 26px;
+            line-height: 26px; /* 行高 */
+            list-style-type: none; /*设置列表项的样式*/
+            /*display: inline-block;*/
+            float: left; /* 向左浮动 */
+            padding: 30px;
+        }
+        table{
+            align : right;
+            type : text;
+            width: 300px;
+            margin:50px  200px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="div2">
+        <ul>
+            <li>① 填写会员信息</li>
+            <li>② 通过邮件确认</li>
+            <li>③ 注册成功</li>
+        </ul>
+    </div>
+       <div class="div3">
+           <table>
+               <tr>
+                   <td ><label for="E-mail">E-mail:</label></td>
+                   <td><input id="E-mail" name="E-mail"  /></td>
+               </tr>
+               <tr>
+                   <!--<td><span>(有效的E-mail地址才能收到激活码)</span></td>-->
+               </tr>
+               <tr>
+                   <td ><label for="name">昵称:</label></td>
+                   <td><input id="name" name="name"  /></td>
+               </tr>
+               <tr>
+                   <td ><label for="password">密码:</label></td>
+                   <td><input id="password" name="password"  /></td>
+               </tr>
+               <tr>
+                   <td ><label for="repassword">再次输入密码:</label></td>
+                   <td><input id="repassword" name="repassword"  /></td>
+               </tr>
+
+           </table>
+       </div>
+
+</div>
+</body>
+</html>
