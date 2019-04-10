@@ -14,10 +14,7 @@
             height: 100px;
             border: 1px solid yellow;
         }
-        .div3{
-            height: 500px;
-            border:0;
-        }
+
 
         ul {
             position: absolute; /* 绝对定位 位置固定 */
@@ -33,12 +30,21 @@
             float: left; /* 向左浮动 */
             padding: 30px;
         }
-        table{
-            align : right;
-            type : text;
-            width: 300px;
-            margin:50px  200px;
 
+        table {
+            align: left;
+            type: text;
+            width: 500px;
+            margin: 50px 200px;
+
+        }
+
+        .c {
+            width:1000px;
+            color: gray;
+        }
+        #cid{
+            color: red;
         }
 
     </style>
@@ -52,31 +58,60 @@
             <li>③ 注册成功</li>
         </ul>
     </div>
-       <div class="div3">
-           <table>
-               <tr>
-                   <td ><label for="E-mail">E-mail:</label></td>
-                   <td><input id="E-mail" name="E-mail"  /></td>
-               </tr>
-               <tr>
-                   <!--<td><span>(有效的E-mail地址才能收到激活码)</span></td>-->
-               </tr>
-               <tr>
-                   <td ><label for="name">昵称:</label></td>
-                   <td><input id="name" name="name"  /></td>
-               </tr>
-               <tr>
-                   <td ><label for="password">密码:</label></td>
-                   <td><input id="password" name="password"  /></td>
-               </tr>
-               <tr>
-                   <td ><label for="repassword">再次输入密码:</label></td>
-                   <td><input id="repassword" name="repassword"  /></td>
-               </tr>
+    <table>
+        <tr>
+            <td><label for="E-mail">* E-mail:</label></td>
+            <td><input id="E-mail" name="E-mail"/></td>
+        </tr>
+        <tr class="c">
+            <td><label for="safe">(有效的E-mail地址才能收到激活码)</label></td>
+            <td><input id="safe" name="safe" type="hidden"/></td>
+        </tr>
+        <tr>
+            <td><label for="name">* 昵称:</label></td>
+            <td><input id="name" name="name"/></td>
+        </tr>
+        <tr class="c">
 
-           </table>
-       </div>
+            <td><label for="safe">(昵称在CSDN全站显示)</label></td>
+            <td><input id="safe1" name="safe" type="hidden"/></td>
+        </tr>
+        <tr>
+            <td><label for="password">* 密码:</label></td>
+            <td><input id="password" name="password"/></td>
+        </tr>
+        <tr class="c" id="cid">
+            <td><label for="safe">(为了您的账户安全，建议使用字符+数字等多种不同类型的组合，且长度大于5位)</label></td>
+            <td><input id="safe2" name="safe" type="hidden"/></td>
+        </tr>
+        <tr>
+            <td><label for="repassword">* 再次输入密码:</label></td>
+            <td><input id="repassword" name="repassword"/></td>
+        </tr>
+        <tr class="c">
 
+            <td><label for="safe">(确保您记住密码)</label></td>
+            <td><input id="safe3" name="safe" type="hidden"/></td>
+        </tr>
+        <tr>
+            <td><label>* 性别：</label></td>
+            <td>
+                <label>
+                    <input type="radio" name="sex" value="1"/>
+                </label> 男
+                <label>
+                    <input type="radio" name="sex" value="2"/>
+                </label> 女
+            </td>
+        </tr>
+        <tr>
+            <td><label for="item">* 注册条款</label></td>
+            <td>
+                <input type="checkbox" id="item" name="item" value="1"/>我已仔细阅读并接受
+                <a href="#">CSDN注册条款</a>
+            </td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
