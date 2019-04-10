@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery动画</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+            background-color: #22EE44;
+            display: none;
+        }
+    </style>
+    <script src="../js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="a"></div>
+<button onclick="show()">show</button>
+<button onclick="hide()">hide</button>
+<button onclick="fadeIn()">fadeIn</button>
+<button onclick="fadeOut()">fadeOut</button>
+<button onclick="fadeToggle()">fadeToggle</button>
+<button onclick="fadeTo()">fadeTo</button>
+</body>
+</html>
+<script>
+    function show(){
+        $("#a").show(3000,function(){
+            console.log("id=234的这一行已经添加成功")
+        })
+    }
+
+    function hide(){
+        $("#a").hide(3000,function(){
+            console.log("id=234的这一行已经删除了")
+        })
+    }
+
+    function fadeIn(){
+        $("#a").fadeIn(3000,function(){
+            console.log("id=123的这一行已经添加成功")
+        })
+    }
+
+    function fadeOut(){
+        $("#a").fadeOut(3000,function(){
+            console.log("id=123的这一行已经删除了")
+        })
+    }
+
+    function fadeToggle(){
+        $("#a").fadeToggle(3000,function(){
+            console.log("执行了fadeToggle函数")
+        })
+    }
+
+    function fadeTo(){
+        $("#a").fadeTo(3000,0.1,function(){
+            console.log("执行了fadeTo函数")
+        })
+    }
+</script>

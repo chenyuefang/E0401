@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>js基础</title>
+    <!--
+        引入jQuery的类库
+        1、使用$（）的对象是jQuery对象
+        2、dom对象转成jQuery对象 $(dom)
+        3、jQuery对象转成dom对象  $(dom).get(0) 通过get函数获取dom对象
+        4、$() 括号中写的选择器 和我们css中定义的选择符是一样的
+        5、$() 除掉能够写选择符，还可以直接写html代码、还可以写 dom对象、还可以写任意 内存中的对象
+    -->
+    <script src="../js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+<p >test1</p>
+<p name="test" class="t">test2</p>
+<p>test3</p>
+
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+</ul>
+<ul>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ul>
+    <li>5</li>
+    <li>6</li>
+</ul>
+</body>
+</html>
+<script>
+    //	var pArr = $("p"); // document.getElementsByTagName("p");
+    //	for (var p =0; p < pArr.length; p++){
+    //		console.log(pArr[p])
+    //	}
+
+    //	$("p").each(function(index, element){ // html节点--》 dom节点
+    //		console.log(index + "," + element.outerHTML)
+    //	});
+    // dom对象，jQuery对象
+    //	console.log($("p").first().html())
+
+    console.log($("p[name='test']").get(0));
+
+</script>
