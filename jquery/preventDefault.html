@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<title>preventDefault事件</title>
+<head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("a").click(function(event){
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="http://w3cschool.cc/">Go to W3Cschool.cc</a>
+<p>The preventDefault() method will prevent the link above from following the URL.</p>
+
+</body>
+</html>
