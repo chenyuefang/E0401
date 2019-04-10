@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" name="checkall" onclick="f1(event)" />
+		<br />
+		<input type="checkbox" name="a" />
+		<input type="checkbox" name="a" />
+		<input type="checkbox" name="a" />
+		<input type="checkbox" name="a" />
+	</body>
+	
+	<script type="text/javascript">
+		function f1(event){
+			var target  = event.target;
+			var aArr = document.getElementsByName("a");
+			for (var p = 0; p < aArr.length; p++){
+				aArr[p].checked = !aArr[p].checked;
+			}
+		}
+	</script>
+</html>

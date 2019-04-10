@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>完成导航菜单功能</title>
+		
+		<link href="../css/c.css" rel="stylesheet" />
+		
+		<script type="text/javascript">
+			function f1(event) {
+				var obj = event.target; // 事件源
+				if(obj.nodeName != 'A'){
+					obj = obj.parentNode;
+				}
+				var ulArr = document.getElementsByClassName("innerBox");
+				var ul = obj.nextSibling;
+				while (ul && ul.nodeType != 1){
+					console.log(ul.nodeType)
+					ul = ul.nextSibling;
+				}
+//				console.log(ul.nodeType)
+				for (var p = 0; p < ulArr.length; p++){
+					console.log("p="+p+",display:"+ulArr[p].style.display);
+//					if (!ulArr[p].style.display){
+//						ulArr[p].style.display = "block";
+//					}
+//					else {
+//						ulArr[p].style.display = ""; // "" js false 隐藏的
+//					}
+					ulArr[p].style.display = "";
+				}
+				ul.style.display = "block";
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="outerBox" id="outerBox">
+				
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// json串
+	var menu = [
+		{name:'员工管理',children:[{name:"员工管理"},{name:"新增日志"},{name:"日志模板"},{name:"查看历史日志"}]},
+		{name:'用户管理',children:[{name:"用户列表"},{name:"新增用户"},{name:"修改用户"}]},
+		{name:'客户管理',children:[{name:"客户列表"},{name:"新增客户"}]},
+		{name:'员工管理',children:[{name:"员工管理"},{name:"新增日志"},{name:"日志模板"},{name:"查看历史日志"}]},
+		{name:'用户管理',children:[{name:"用户列表"},{name:"新增用户"},{name:"修改用户"}]},
+		{name:'客户管理',children:[{name:"客户列表"},{name:"新增客户"}]},
+		{name:'员工管理',children:[{name:"员工管理"},{name:"新增日志"},{name:"日志模板"},{name:"查看历史日志"}]},
+		{name:'用户管理',children:[{name:"用户列表"},{name:"新增用户"},{name:"修改用户"}]},
+		{name:'客户管理',children:[{name:"客户列表"},{name:"新增客户"}]}
+	];
+	
+	var outerBox = document.getElementById("outerBox");
+	
+	/**
+	 * 1、使用html的方式来完成： innerHTML属性
+	 * 2、使用node节点的方式来完成：appendChild
+	 */
+	
+//	var totalHtml = '';
+//	for (var p = 0; p < menu.length; p++){
+//		//menu[p] =  {name:'日志管理',children:[{name:"日志列表"},{name:"新增日志"},{name:"日志模板"},{name:"查看历史日志"}]}
+//		totalHtml += '<li>'+
+//					'<a href="javascript:void(0)" onclick="f1(this)"><span>'+menu[p].name+'</span></a>'+
+//					'<ul class="innerBox">';
+//		for (var m = 0; m < menu[p].children.length; m++){			
+//					totalHtml += '<li>'+
+//							'<a href="javascript:void(0)">'+
+//								'<span><img src="../img/icon4.png" />'+menu[p].children[m].name+'</span>'+
+//							'</a>'+
+//						'</li>'
+//		}
+//		totalHtml +=	    '</ul>'+
+//				'</li>';
+//		//outerBox.appendChild(html); //Node
+//	}
+//	
+//	outerBox.innerHTML = totalHtml;
+
+	
+	for (var p = 0; p < menu.length; p++){
+		var li = document.createElement("li");
+		var a = document.createElement("a");
+		a.setAttribute("href","javascript:void(0)");
+//		a.setAttribute("onclick","f1(this)");  // 这个不好维护
+		a.setAttribute("class","clickClass");
+		var span = document.createElement("span");
+		var textNode = document.createTextNode(menu[p].name);//从属关系 建立起来
+		span.appendChild(textNode);
+		a.appendChild(span);
+		li.appendChild(a);
+		
+		var ul = document.createElement("ul");
+		ul.setAttribute("class","innerBox");
+		for (var m = 0; m < menu[p].children.length; m++){
+			var subLi = document.createElement("li");
+			var subA = document.createElement("a");
+			subA.setAttribute("href","javascript:void(0)")
+			var subSpan = document.createElement("span");
+			var img = document.createElement("img");
+			img.setAttribute("src","../img/icon4.png");
+			var subTextNode = document.createTextNode(menu[p].children[m].name);// 从属关系
+			
+			subSpan.appendChild(img);
+			subSpan.appendChild(subTextNode);
+			subA.appendChild(subSpan);
+			subLi.appendChild(subA);
+			
+			ul.appendChild(subLi);
+		}
+		
+		li.appendChild(ul);
+		outerBox.appendChild(li);
+	}
+	
+	function addEvent(){
+		var aArr = document.getElementsByClassName("clickClass");
+		for (var p = 0; p < aArr.length; p++){
+			aArr[p].addEventListener("click",f1); // addEventListener 要求事件对象一定要在页面上已经存在了
+		}
+	}
+	
+	addEvent();
+	
+</script>
+
