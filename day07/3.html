@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件</title>
+
+    <script src="../js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="a" style="width:100px; height: 100px; background-color: #ADFF2F;"></div>
+</body>
+</html>
+<script>
+    $("#a").bind("click",{name:'test'},clickEventFunc);
+
+    $("#a").click(test);
+
+    function test(){
+        console.log("将test函数注册到click事件中")
+    }
+
+    function clickEventFunc(event){
+        console.log("点击了div");
+        console.log("事件点击时传递的参数为："+event.data.name)
+    }
+
+    $("#a").unbind("click"); // 可选参数不传递，那么就是取消绑定到事件类型上的所有函数
+</script>

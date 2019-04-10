@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js" type="text/javascript"></script>
+</head>
+<body>
+pagex:<input id="x" />  pagey:<input id="y"/>
+</body>
+</html>
+<script>
+    $(document).mousemove(function(event){
+        var x = event.pageX;
+        var y = event.pageY;
+
+//		document.getElementById("x").value = x;
+        $("#x").val(x);
+        $("#y").val(y);
+    });
+</script>
