@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>主界面</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding:0;
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+			
+			html,body {
+				width:100%;
+				height:100%;
+				
+				background-color:rgb(233,233,233);
+			}
+			
+			.container {
+				width:100%;
+				height:100%;
+			}
+			
+			h1,h2,h3,h4,h5,h6 {
+				
+			}
+			
+			.header{
+				width:100%;
+				height:30px;
+				background-color:#F5F6F7;
+				
+				position: relative;
+			}
+			
+			.header h3{
+				height:30px;
+				line-height: 30px;
+				
+				position: relative;
+			
+			}
+			
+			.header ul {
+				position: absolute;
+				top:0;
+				right:30px;
+			}
+			
+			.header ul li {
+				height:26px;
+				line-height: 26px;
+				list-style-type: none;
+				/*display: inline-block;*/
+				float:left;
+				padding:2px;
+			}
+			
+			.home {
+				list-style-image: url(img/icon5.png);
+			}
+			
+			.first{
+				list-style-image: url(img/icon8.png);
+			}
+			
+			.search {
+				width:100%;
+				min-width: 926px;
+				height:40px;
+				background-color:#F5F6F7;
+				margin-top:20px;
+				
+				line-height: 40px;
+			}
+			
+			select, input {
+				width:200px;
+				height:24px;
+			}
+			
+			.btn{
+				width:106px;
+				height:36px;
+				
+				background-image: url(img/btn4.png);
+				
+				border:0;
+			}
+			
+			.table{
+				width:100%;
+				text-align: center;
+				margin-top:10px;
+			}
+			
+			.table tr {
+				background-color: white;
+			}
+			
+			.table tr.odd{
+				background-color: #A9A9A9;
+			}
+			
+			.table tr:hover {
+				background-color:#ADFF2F;
+			}
+			
+			.table td,.table th{
+				height:35px;
+			}
+			
+			.table td input,.table th input{
+				width:40px;
+			}
+			
+			.table th{
+				background-color:#4169E1;
+				color:white;
+			}
+			
+			.footer{
+				width:100%;
+				height:40px;
+				line-height: 40px;
+				
+				background-color: white;
+				margin-top:10px;
+				
+				position: relative;
+			}
+			
+			.footer button{
+				
+			}
+			
+			.footer ul {
+				position: absolute;
+				top:0;
+				right:30px;
+			}
+			
+			.footer ul li{
+				height:40px;
+				line-height: 40px;
+				list-style-type: none;
+				/*display: inline-block;*/
+				float:left;
+				padding:2px;
+			}
+			
+			.page {
+				text-decoration: none;
+				color:#000000;
+				
+				display: inline-block;
+				border:1px solid #A9A9A9;
+				width:30px;
+				height:30px;
+				
+				text-align: center;
+				vertical-align: middle;
+				
+				background-image: url(img/btn1.png);
+				background-position: -10px -2px;
+			}
+			
+			
+			.pre {
+				background-image: url(img/icon7.png);
+				background-repeat: no-repeat;
+				background-position: 10px 8px;
+			}
+			
+			.next {
+				background-image: url(img/icon8.png);
+				background-repeat: no-repeat;
+				background-position: 10px 8px;
+			}
+			
+			.box {
+				width:98%;
+				margin:0 auto;
+			}
+			
+			#updateDialog{
+				width:300px;
+				height:250px;
+				background-color: #4169E1;
+				display:none;
+				
+				position: absolute;
+				top:100px;
+				left:30%;
+			}
+		</style>
+		<script src="js/jquery.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="box">
+					<h3>系统日志</h3>
+					<ul>
+						<li><img src="img/icon5.png" /></li>	
+						<li>首页</li>	
+						<li><img src="img/icon8.png" /></li>	
+						<li>日志管理</li>
+						<li><img src="img/icon8.png" /></li>	
+						<li>系统日志</li>
+					</ul>
+				</div>
+			</div>
+			<div class="search">
+				<div class="box">
+					<label>类型：</label>
+					<select>
+						<option>类型1</option>
+						<option>类型2</option>
+					</select>
+					<label>日期：</label><span>从</span>
+					<input />
+					<span>至</span>
+					<input />
+					<input type="button" class="btn" value="搜索"/>
+				</div>
+			</div>
+			<div class="box">
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:20px;"><input type="checkbox" id="checkAll" style="width:20px;"/></th>
+							<th>日志操作</th>
+							<th>事件类型</th>
+							<th>发生时间</th>
+							<th>修复时间</th>
+							<th>处理人</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="aa" /></td>
+							<td>新增用户操作</td>
+							<td>新增用户操作</td>
+							<td>2019-03-03</td>
+							<td>2019-04-03</td>
+							<td>张三</td>
+						</tr>
+						<tr class="odd">
+							<td><input type="checkbox" name="aa" /></td>
+							<td>新增用户操作</td>
+							<td>新增用户操作</td>
+							<td>2019-03-03</td>
+							<td>2019-04-03</td>
+							<td>张三</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="aa" /></td>
+							<td>新增用户操作</td>
+							<td>新增用户操作</td>
+							<td>2019-03-03</td>
+							<td>2019-04-03</td>
+							<td>张三</td>
+						</tr>
+						<tr class="odd">
+							<td><input type="checkbox" name="aa" /></td>
+							<td>新增用户操作</td>
+							<td>新增用户操作</td>
+							<td>2019-03-03</td>
+							<td>2019-04-03</td>
+							<td>张三</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="aa" /></td>
+							<td>新增用户操作</td>
+							<td>新增用户操作</td>
+							<td>2019-03-03</td>
+							<td>2019-04-03</td>
+							<td>张三</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+				<div class="footer">
+					<div class="box">
+					<button class="btn" id="add">新增</button>
+					<button class="btn" id="update">修改</button>
+					<button class="btn" id="del">删除</button>
+					<ul>
+						<li><a href="#" class="page pre"></a></li>
+						<li><a href="#"  class="page ">1</a></li>
+						<li><a href="#"  class="page ">2</a></li>
+						<li><a href="#"  class="page ">3</a></li>
+						<li><a href="#" class="page next"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<div id="updateDialog">
+		<label>日志操作</label><input id="name" /><br />
+		<label>事件类型</label><input id="type"/><br />
+		<label>发生时间</label><input id="datestr"/><br />
+		<label>修复时间</label><input id="datestr2"/><br />
+		<label>处理人</label><input id="username"/><br/>
+		<button id="updateData">确认修改</button>
+	</div>
+</html>
+<script>
+	$("#checkAll").click(function(){
+		console.log(this.checked)
+		// attr : 它不能够检查状态  使用 prop
+		$("input[name='aa']").prop("checked",this.checked);
+	});
+	
+	$("#del").click(function(){
+//		$("input[name='aa']").filter(function()).parent().parent().remove();
+//		console.log($("tbody").find("input[name='aa']").length);
+
+		// find方式
+		$("tbody").find("input[name='aa']").filter(function(index){
+			return $(this).prop("checked");
+		}).parent().parent().remove();
+		
+		//filter方式
+//		$("input[name='aa']").filter(function(index){
+//			return $(this).prop("checked");
+//		}).parent().parent().remove();
+		
+//		console.log(len)
+	});
+	
+	var arr = [
+		{name:'ddfsf',type:'dsfsdf',datestr:'sdfsdf',datestr2:'weewfwe',username:'wfeewf'}
+	];
+	
+	$("#add").click(function(){
+		var html  = '<tr>'+
+			'<td><input type="checkbox" name="aa" /></td>'+
+			'<td>'+arr[0].name+'</td>'+
+			'<td>'+arr[0].type+'</td>'+
+			'<td>'+arr[0].datestr+'</td>'+
+			'<td>'+arr[0].datestr2+'</td>'+
+			'<td>'+arr[0].username+'</td>'+
+		'</tr>';
+		
+		$("tbody").append(html);
+	});
+	
+	$("#update").click(function(){
+		var obj = $("tbody").find("input[name='aa']").filter(function(index){
+			return $(this).prop("checked");
+		})
+		if (obj.length != 1){
+			alert("只能选择一行");
+			return ;
+		}
+		
+		var obj = $("tbody").find("input[name='aa']").filter(function(index){
+			return $(this).prop("checked");
+		});
+		
+		var td1 = obj.parent().next();
+		$("#name").val(td1.html());
+		var td2 = td1.next();
+		$("#type").val(td2.html());
+		var td3 = td2.next();
+		$("#datestr").val(td3.html());
+		var td4 = td3.next();
+		$("#datestr2").val(td4.html());
+		var td5 = td4.next();
+		$("#username").val(td5.html());
+		
+		$("#updateDialog").show();
+	});
+	
+	
+	$("#updateData").click(function(){
+		var obj = $("tbody").find("input[name='aa']").filter(function(index){
+			return $(this).prop("checked");
+		});
+		obj.parent().next().html($("#name").val()).next().html($("#type").val())
+		.next().html($("#datestr").val()).next().html($("#datestr2").val()).next().html($("#username").val())
+		$("#updateDialog").hide();
+		alert("恭喜你，修改成功了");
+		clearData();
+	});
+	
+	function clearData(){
+		$("#name").val("");
+		$("#type").val("");
+		$("#datestr").val("");
+		$("#datestr2").val("");
+		$("#username").val("");
+	}
+</script>
