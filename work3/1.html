@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
+
         div {
             margin: 100px;
             width: 600px;
@@ -21,13 +22,11 @@
         }
 
         .btn {
-            padding-top: 0px;
-            margin-left: 0px;
+            padding-top: 0;
+            margin-left: 0;
             width: 124px;
             height: 32px;
-
             background-image: url("../img/btn3.png"); /* 给按钮加背景图 */
-
             border: 0;
         }
     </style>
@@ -49,11 +48,19 @@
                 <textarea cols="40" rows="10"></textarea>
             </td>
         </tr>
-
     </table>
 </div>
 </body>
 </html>
 <script type="text/javascript">
+    var year = parseFloat(prompt("请输入一个年份" + year));
+    if (year % 100 != 0 && year % 4 == 0 || year % 400 == 0) {
 
+        console.log("是闰年");
+
+    } else {
+
+        console.log("不是闰年");
+
+    }
 </script>
