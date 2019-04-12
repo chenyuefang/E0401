@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        div {
+            margin: 100px;
+            width: 600px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        table {
+            margin: 60px;
+            width: 500px;
+        }
+
+        .t1 {
+            padding-top: 30px;
+        }
+
+        .btn {
+            width: 97px;
+            height: 34px;
+
+            background-image: url("../img/btn1.png"); /* 给按钮加背景图 */
+
+            border: 0;
+        }
+    </style>
 </head>
 <body>
+<div>
+    <table class="table">
+        <tr>
+            <td><label for="year">年份：</label></td>
+            <td><input id="year" name="year"/></td>
+            <td colspan="2" align="left">
+                <!--<input type="image" src="../img/btn1.png" value="判断"/> -->
+                <button class="btn">判断</button>  <!-- 按钮 -->
+            </td>
+        </tr>
+        <tr class="t1">
+            <td align="right"><label></label></td>
+            <td>
+                <textarea cols="40" rows="10"></textarea>
+            </td>
+        </tr>
 
+    </table>
+</div>
 </body>
 </html>
