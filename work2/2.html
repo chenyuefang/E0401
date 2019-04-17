@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>纸牌</title>
+    <style type="text/css">
+        /**{*/
+        /*width: 800px;*/
+        /*height: 800px;*/
+        /*background-color: #BABABA;*/
+        /*}*/
+        .d {
+            width: 200px;
+            height: 250px;
+            margin: 100px 100px;
+        }
+
+        .d1 {
+            margin: -280px 60px;
+        }
+
+
+        #d4id {
+            background-color: white;
+            opacity: 0.1;
+            filter: Alpha(opacity=10); /* IE8 以及更早的浏览器 */
+        }
+    </style>
 </head>
 <body>
-<img src="./img/5.jpg">
+<div class="d">
+    <div>
+        <img src="./img/5.jpg">
+    </div>
+    <div class="d1">
+        <img src="./img/6.jpg" >
+    </div>
+    <div class="d1">
+        <img src="./img/7.jpg">
+    </div>
+    <div class="d1">
+        <img src="./img/8.jpg">
+    </div>
+    <div class="d1" id="d4id">
+        <img src="./img/9.jpg">
+    </div>
+
+</div>
+
 </body>
 </html>
