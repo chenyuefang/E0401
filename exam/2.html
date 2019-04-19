@@ -1,0 +1,56 @@
+<html>
+
+<head>2</head>
+<script type="text/javascript">
+    function swap(myArray, p1, p2) {
+        var temp = myArray[p1];
+        myArray[p1] = myArray[p2];
+        myArray[p2] = temp;
+    }
+
+    function bubbleSort(myArray) {
+
+        var len = myArray.length,
+            i, j, stop;
+
+        for (i = 0; i < len; i++) {
+            for (j = 0, stop = len - i; j < stop; j++) {
+                if (myArray[j] > myArray[j + 1]) {
+                    swap(myArray, j, j + 1);
+                }
+            }
+        }
+
+        return myArray;
+    }
+
+    function res(arr) {
+        var tmp = [];
+        arr.sort().sort(function (a, b) {
+            if (a === b && tmp.indexOf(a) === -1) {
+                tmp.push(a)
+            }
+        })
+        return tmp
+    }
+
+    var arr = [5, 9, 2, 3, 88, 12, 1, 3, 4, 33, 9, 5, 4];
+
+    alert("原数组为:" + arr);
+
+    arr.sort(bubbleSort);
+    bubbleSort(arr);
+
+    alert(arr);
+    var arrRepeat = res(arr);
+
+    alert("数组中存在重复元素为"+ arrRepeat );
+</script>
+
+<body>
+<p>
+    打印数组元素
+</p>
+</body>
+
+</html>
