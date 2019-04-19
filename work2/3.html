@@ -2,132 +2,245 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>科大讯飞</title>
     <style type="text/css">
-        * {
-            margin: 20px 20px;
+        *{
+            margin: 0 auto;
+            padding: 0;
+            font-size: 12px;
+            font-family: 楷书;
+        }
+
+        body{
+            background-color: #A9A9A9;
+            background-image: url("../img/main_bg.png");
+            /*background-repeat: no-repeat;*/
+        }
+
+        .container{
+            margin: 30px;
+            padding: 30px;
+
+        }
+
+        .head{
             width: 100%;
-            height: 100%;
-            /*background-color: lightgray;*/
-        }
-
-        .d1 {
-            height: 200px;
-            background-image: url("../img/main_bg.png");
+            height:90px;
+            background-image: url("img3/main_bg.png");
+            position: relative;
 
         }
 
-        .span {
-            color: lightskyblue;
-            font-family: 黑体;
-            font-size: 30px;
-            float: left;
-        }
-
-        .d11 {
-            height: 50px;
-            width: 50px;
-            background-image: url("../img/main_bg.png");
-        }
-
-        .d33 {
-            margin-top: 20px;
-            height: 50px;
-            width: 50px;
-            /*background-image: url("../img/android.png");*/
-        }
-
-        .d3 {
-            height: 500px;
-            /*background-color: darkseagreen;*/
-            background-color:white;
-            /*float: left;*/
-        }
-        .d33{
-            height: 10px;
-            width:20px;
-        }
-
-        .d4 {
-            height: 300px;
-            background-color: darksalmon;
-
-        }
-
-        .d5 {
-
-            height: 100px;
-            background-color: beige;
-
-        }
-
-        .d2 {
-            height: 140px;
-            width: 500px;
-            color: black;
-            margin-right: 10px;
+        img{
             position: absolute;
-            top: 60px;
-            right: 50px;
+            left: 100px;
+            top: 13px;
         }
 
-        table {
-            align: left;
-            type: text;
-            width: 150px;
-            margin: 10px;
-            height: 10px;
-            line-height: 26px;
+        .user{
+            position:absolute;
+            top: 30px;
+            right: 190px;
+            float: right;
+
         }
+
+        .box{
+            width: 80%;
+            height: 550px;
+            background-color: white;
+
+        }
+        .word {
+            margin: 0 15px;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+
+        .above{
+            width: 100%;
+            height: 40px;
+            background-color: blue;
+        }
+
+        .above ul {
+            float: left;
+            position: absolute;
+            font-size: 18px;
+            line-height: 40px;
+        }
+
+        .above ul li {
+            float: left;
+            color: white;
+            list-style-type: none;
+            width: 100px;
+            text-align: center;
+        }
+
+        .above ul li:hover {
+            background-color: #abfcff;
+            list-style-type: none;
+            width: 100px;
+        }
+
+        .above ul li a {
+            display: inline-block;
+            width: 100px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .middle{
+            width: 100%;
+            height: 300px;
+            background-color: red;
+
+            margin: 5px;
+            margin-left: 0px;
+            margin: 0 auto;
+            border: 1px solid gray;
+            background-color: white;
+            left:135px;
+        }
+
+        .main1 {
+            width: 50%;
+            height: 90px;
+            float: left;
+            min-width: 420px;
+            position: relative;
+            border-bottom: 1px solid gray;
+        }
+
+
+        .image {
+            float: left;
+            width: 100px;
+            height: 100px;
+            align-content: center;
+            position: relative;
+            left: -50px;
+            top: -10px;
+        }
+
+        .under{
+            width: 100%;
+            height: 100px;
+            background-color: ghostwhite;
+            margin: 5px;
+            margin-left: 0px;
+        }
+
+        .buttom{
+            width: 80%;
+            height: 40px;
+            background-color: blueviolet;
+        }
+
+
     </style>
 </head>
 <body>
-<div class="d1">
-    <div class="d11">
-        <img src="../img/net.png">
-    </div>
-    <span class="span">讯飞语音云</span>
-    <div class="d2">
-        <table class="table">
-            <tr>
-                <td><label for="E-mail">账户</label></td>
-                <td><input id="E-mail" name="E-mail"/></td>
-            </tr>
-            <tr>
-                <td><label for="password">密码</label></td>
-                <td><input id="password" name="password"/></td>
-            </tr>
-        </table>
-    </div>
-</div>
+<div class="container" >
 
-<div class="d3">
-    <!--<span>综合讨论</span>-->
-    <!--<div class="d33">-->
-        <!--<img src="../img/android.png">-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--<span>Android讨论区</span>-->
-    <!--</div>-->
-    <!--<div></div>-->
-    <!--<div></div>-->
-    <div class="d33">
+    <div class="head"><img src="../img/logo.png" >
+
+        <div class="user">
+            <span >账号：</span>
+            <input type="text" name="username" placeholder="用户名/Emai" >
+            <input type="checkbox" name="check">
+            <span>自动登陆</span></label>
+            <span>找回密码</span>
+            <br>
+            <span>密码：</span>
+            <input type="password" name="password">
+            <input type="button" value="登陆">
+            <a href="#" class="word">立即注册</a>
+        </div>
 
     </div>
-    <hr/>
-    <div class="d33">
 
+    <div class="box">
+
+        <div class="above">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">讯飞输入法</a></li>
+                <li><a href="">讯飞语点</a></li>
+                <li><a href="">灵犀</a></li>
+                <li><a href="">开心课堂</a></li>
+            </ul>
+        </div>
+        <div class="middle">
+            <p>综合讨论</p>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/android.png">
+                </div>
+                <div class="text">
+                    <h3>Android 讨论区</h3>
+                    <h4>Android 讨论交流区</h4>
+                    <h5>Android 讨论交流区 Android 讨论交流区</h5>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/apple.png">
+                </div>
+                <div class="text">
+                    <h3>IOS 讨论区</h3>
+                    <h4>IOS 讨论交流区</h4>
+                    <h5>IOS 讨论交流区 IOS 讨论交流区</h5>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/java.png">
+                </div>
+                <div class="text">
+                    <h3>Java 讨论区</h3>
+                    <h4>Java 讨论交流区</h4>
+                    <h5>Java 讨论交流区 Java 讨论交流区</h5>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/net.png">
+                </div>
+                <div class="text">
+                    <h3>.Net 讨论区</h3>
+                    <h4>.Net 讨论交流区</h4>
+                    <h5>.Net 讨论交流区 .Net 讨论交流区</h5>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/db.png">
+                </div>
+                <div class="text">
+                    <h3>Database 讨论区</h3>
+                    <h4>Database 讨论交流区</h4>
+                    <h5>Database 讨论交流区 Database 讨论交流区</h5>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="image">
+                    <img src="../img/web.png">
+                </div>
+                <div class="text">
+                    <h3>Web 讨论区</h3>
+                    <h4>Web 讨论交流区</h4>
+                    <h5>Web 讨论交流区 Web 讨论交流区</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="under"></div>
     </div>
-    <hr/>
-    <div class="d33">
-
-    </div>
-</div>
-<div class="d4">
-
-</div>
-<div class="d5">
-
+    <div class="buttom"></div>
 </div>
 </body>
 </html>
+
+
