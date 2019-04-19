@@ -3,140 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <title>3</title>
-    <script src="jquery.js" type="text/javascript"></script>
-    <style type="text/css">
-        .container{
-            width: 800px;
-            height:550px;
-            border: yellow 2px solid;
+    <style>
+        * {
+            padding: 0;
             margin: 0 auto;
+            font-family: "微软雅黑";
+            font-size: 14px;
         }
-        .header{
-            margin: 10px 15px;
-            height: 25px;
+
+        html,
+        body {
             width: 100%;
+            height: 100%;
+        }
 
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
         }
-        .line{
-            background-color: yellow;
-            border: none;
-            height: 2px;
-            width: 750px;
+
+        .box {
+            height: 500px;
+            width: 700px;
+            border: 1px solid #FEFE5A;
+            padding-top: 30px;
         }
-        .header ul li{
-            float: left;
+
+        .ul {
             list-style-type: none;
-            margin-left: 30px;
+        }
 
+        .ul li {
+            margin-left: 20px;
+            float: left;
         }
-        .body{
-            margin-left: 80px;
 
+        .hr {
+            clear: both;
+            border: 1px solid #F1F161;
+            margin: 0px 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
         }
-        span{
+
+        .con {
+            padding-left: 60px;
+        }
+
+        .war {
+            color: #CF5971;
+        }
+
+        .err {
             color: red;
+            display: inline-block;
         }
-        .text{
-            color: grey;
-            margin-left: 95px;
+
+        .hint {
+            color: #B6B7BA;
+            display: block;
+            height: 20px;
+            margin-left: 106px;
         }
-        .text2{
+
+        .hint-pass {
+            display: block;
             color: red;
-            margin-left: 95px;
+            height: 20px;
+            margin-left: 106px;
         }
-        .email{
-            margin-left: 50px;
+
+        .sub {
+            margin-left: 106px;
         }
-        .username,.password{
-            margin-left: 65px;
-        }
-        .repassword{
-            margin-left:0px;
-        }
-        .register{
-            margin-left: 110px;
         }
     </style>
 </head>
+
 <body>
 <div class="container">
-    <form name="myform">
-        <div class="header">
-            <ul class="table">
-                <li>①填写会员信息</li>
-                <li>②通过邮件确认</li>
-                <li>③注册成功</li>
-            </ul>
+    <div class="box" id="box">
+        <ul class="ul">
+            <li>①填写会员信息</li>
+            <li>②通过邮件确认</li>
+            <li>③注册成功</li>
+        </ul>
+        <div class="hr"></div>
+        <div class="con">
+            <form>
+                <label for="email"><span class="war">*</span>E-mail:</label>
+                <input id="email" />
+                <div class="err" id="em-err"></div>
+                <span class="hint">(有效的E-mail地址才能收到激活码)</span>
+                <label for="name"><span class="war">*</span>昵称:</label>
+                <input id="name" />
+                <div class="err" id="name-err"></div>
+                <span class="hint">(昵称在CSDN全站显示)</span>
+                <label for="password"><span class="war">*</span>密码:</label>
+                <input type="password" id="password" />
+                <div class="err" id="pass-err"></div>
+                <span class="hint-pass">(为了您的账户安全，建议使用字符+数字等多种不同类型的组合，且长度大于5位)</span>
+                <label for="password-con"><span class="war">*</span>再次输入密码:</label>
+                <input type="password" id="password-con" />
+                <div class="err" id="pass-con-err"></div>
+                <span class="hint">(确保您记住密码)</span>
+                <label for="male"><span class="war">*</span>性别:</label>
+                <input type="radio" name="sex" id="male" value="male" />男
+                <input type="radio" name="sex" id="famale" value="famale" />女
+                <div class="err" id="sex-err"></div><br/>
+                <label for=""><span class="war">*</span>注册条款:</label>
+                <input type="checkbox" id="read">我已仔细阅读并接受
+                <a href="">CSDN注册条款</a>
+                <div class="err" id="read-err"></div><br/>
+                <input type="submit" class="sub" id="sub" value="注册" />
+            </form>
         </div>
-        <hr class="line">
-        <div class="body">
-            <span>*</span>E-mail<input type="text" name="email" id="E-mail" class="email">
-            <span class="warn" id="emailWarn">必填项有空值，请输入正确的值</span><br/>
-            <span class="text">（有效的E-mail地址才能收到激活码）</span><br/>
-            <span>*</span>昵称<input type="text"  name="username" id="username" class="username">
-            <span class="warn" id="usernameWarn">必填项有空值，请输入正确的值</span><br/>
-            <span class="text">（昵称在CSDN全站显示）</span><br/>
-            <span>*</span>密码<input type="text" name="password" id="password" class="password">
-            <span class="warn" id="passwordWarn">必填项有空值，请输入正确的值</span><br/>
-            <span class="text2">（为了您的账户安全，建议使用字符+数字等多种不同类型的组合，且长度大于5位）</span><br/>
-            <span>*</span>再次输入密码<input type="text" name="repassword" id="repassword" class="repassword">
-            <span class="warn" id="repasswordWarn">必填项有空值，请输入正确的值</span><br/>
-            <span class="text">（确保您记住密码）</span><br/>
-            <span>*</span>性别　　　　<input type="radio" name="gender" id="male" >男
-            <input type="radio" name="gender" id="female">女
-            <!--<span class="warn" id="genderWarn">必填项有空值，请输入正确的值</span>-->
-            <br/>
-            <span>*</span>注册条款　　<input type="checkbox" name="tips" id="tips">
-            我已仔细阅读并接受<a href=""> CSDN注册条款</a>
-            <!--<span class="warn" id="registerWarn">必填项有空值，请输入正确的值</span>-->
-            <br/>
-            <input type="button" value="注册"  class="register">
-        </div>
-    </form>
+    </div>
 </div>
 </body>
+
 </html>
-<script type="text/javascript">
-    $(".warn").hide();
-    $(".register").click(function () {
-        if ($(".email").val() ==="") {
-            $("#emailWarn").show();
-        } else {
-            $("#emailWarn").hide();
-        }
-        if ($(".username").val() === "") {
-            $("#usernameWarn").show();
-        } else {
-            // language=JQuery-CSS
-            $("#usernameWarn").hide();
-        }
-        if ($(".password").val() === "") {
-            $("#passwordWarn").show();
-        } else {
-            $("#passwordWarn").hide();
-        }
-        if ($(".repassword").val() === "") {
-            $("#repasswordWarn").show();
-        } else {
-            $("#repasswordWarn").hide();
-        }
-        if (($(":radio[name=gender]:checked").val()) == null) {
-            $("#genderWarn").show();
-        } else {
-            $("#genderWarn").hide();
-        }
-        if (!($("#tips")[0].checked)) {
-            $("#registerWarn").show();
-        } else {
-            // language=JQuery-CSS
-            $("#registerWarn").hide();
-        }
-        if (($(".email").val() !== "") && ($(".username").val() !== "") && ($(".password").val() !== "")
-            && ($(".repassword").val() !== "") && (($(":radio[name=gender]:checked").val()) != null)
-            && ($("#tips")[0].checked)
-        ) {
-            alert("注册成功");
+<script src="../jquery.js"></script>
+<script>
+    if(!$('#read').is(':checked')) {
+        $("#sub").attr("disabled", "disabled");
+    }
+    $('#read').click(function() {
+        console.log("dsdsd")
+        if($('#read').is(':checked')) {
+            $("#sub").removeAttr("disabled");
         }
     });
+    $("#sub").click(function(event) {
+        if(!$("#email").val()) {
+            $("#em-err").text("邮箱不能为空！");
+            $("#email").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#em-err").text("");
+        }
+        if(!$("#name").val()) {
+            $("#name-err").text("用户名不能为空！");
+            $("#name").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#name-err").text("");
+        }
+        if(!$("#password").val()) {
+            $("#pass-err").text("密码不能为空！");
+            $("#password").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#pass-err").text("");
+        }
+        if($("#password").val().length <= 5) {
+            $("#pass-err").text("密码必须大于5位！");
+            $("#password").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#pass-err").text("");
+        }
+        if(!$("#password-con").val()) {
+            $("#pass-con-err").text("密码不能为空！");
+            $("#password-con").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#pass-con-err").text("");
+        }
+        // 两次密码不一样
+        var pass = $("#password").val();
+        var pass_con = $("#password-con").val();
+        if(!(pass_con == pass)) {
+            $("#pass-con-err").text("两次密码输入不一致！");
+            $("#password-con").focus();
+            event.preventDefault();
+            return;
+        } else {
+            $("#pass-con-err").text("");
+        }
 
+        if(!$('input[name="sex"]:checked').val()) {
+            $("#sex-err").text("请选择性别！");
+            $("#male").focus();
+            event.preventDefault();
+        } else {
+            $("#sex-err").text("");
+        }
+    });
 </script>
